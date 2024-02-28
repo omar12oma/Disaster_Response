@@ -37,7 +37,8 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    engine = create_engine(database_filename)
+    url = 'sqlite:///' + database_filename
+    engine = create_engine(url)
     df.to_sql(name='ETL', con=engine, if_exists='replace', index=False)
 
 

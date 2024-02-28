@@ -23,7 +23,8 @@ from sklearn.neighbors import KNeighborsClassifier
 
 
 def load_data(database_filepath):
-    engine = create_engine(database_filepath)
+    url = 'sqlite:///' + database_filepath
+    engine = create_engine(url)
     df = pd.read_sql('ETL', con=engine)
     df.columns = df.columns.astype(str)
     X = df['message']
@@ -71,7 +72,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 def save_model(model, model_filepath):
 
     best_model = model.best_estimator_
-    joblib.dump(best_model, 'best_model.pkl')
+    joblib.dump(best_model, model_filepath)
 
 
 def main():
