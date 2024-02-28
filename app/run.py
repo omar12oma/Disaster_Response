@@ -26,11 +26,14 @@ def tokenize(text):
     return clean_tokens
 
 # load data
-engine = create_engine('sqlite:///../data/YourDatabaseName.db')
-df = pd.read_sql_table('YourTableName', engine)
+engine = create_engine('sqlite:///../data/DisasterResponse.db')
+df = pd.read_sql_table('ETL', engine)
 
+Y = df.drop(columns=['id','message','original','genre'])
+top_10_category = Y.sum().sort_values(ascending=False)[:10]
+top_10_category_index = list(top_10_category.index)
 # load model
-model = joblib.load("../models/your_model_name.pkl")
+model = joblib.load("../models/classifier.pkl")
 
 
 # index webpage displays cool visuals and receives user input text for model
@@ -61,6 +64,25 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        
+        {
+            'data': [
+                Bar(
+                    x=top_10_category_index,
+                    y=top_10_category
+                )
+            ],
+
+            'layout': {
+                'title': 'Top Ten Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
                 }
             }
         }
