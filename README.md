@@ -1,6 +1,6 @@
 # Disaster_Response
 
-In this project we will build a model for an API that classifies disaster messages.
+The project involves analyzing disaster data from Appen to build a model for an API that classifies disaster messages. The dataset contains real messages sent during disaster events. The goal is to create a machine learning pipeline to categorize these messages so they can be sent to appropriate disaster relief agencies.
 
 ## Installation
 
