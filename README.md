@@ -1,6 +1,6 @@
 # Disaster_Response
 
-The project involves analyzing disaster data from Appen to build a model for an API that classifies disaster messages. The dataset contains real messages sent during disaster events. The goal is to create a machine learning pipeline to categorize these messages so they can be sent to appropriate disaster relief agencies.
+The project involves analyzing disaster data from Appen to build a model for an API that classifies disaster messages. The dataset contains real messages sent during disaster events. The goal is to create a machine learning pipeline, using Natural Language Processing (NLP) techniques, to categorize these messages so they can be sent to appropriate disaster relief agencies.
 
 ## Installation
 
@@ -26,7 +26,6 @@ pip install scikit-learn
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3. Go to http://0.0.0.0:3001/
 
 ## Testing the model
 ![water](https://github.com/omar12oma/Disaster_Response/assets/129009511/b36668aa-213c-4e57-8590-f514c3dc8f0f)
