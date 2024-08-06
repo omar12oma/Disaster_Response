@@ -26,6 +26,7 @@ pip install scikit-learn
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
+3. Go to http://0.0.0.0:3001/
 
 ## Testing the model
 ![water](https://github.com/omar12oma/Disaster_Response/assets/129009511/b36668aa-213c-4e57-8590-f514c3dc8f0f)
